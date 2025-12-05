@@ -1,41 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Developer Website – Muslim App</title>
+    <title>Developer Website – EL MARINI APP</title>
     <style>
         body {
             font-family: Arial, sans-serif;
-            max-width: 800px;
-            margin: 40px auto;
-            padding: 20px;
-            color: #222;
-            line-height: 1.6;
+            margin: 0;
+            padding: 40px;
+            background: #f4f4f4;
+            color: #333;
         }
-        h1 {
-            color: #0D3B2A;
+        .container {
+            max-width: 900px;
+            margin: auto;
+            background: #fff;
+            padding: 40px;
+            border-radius: 12px;
+            border: 1px solid #ddd;
         }
-        a {
-            color: #15C57E;
-            font-weight: bold;
+        h1, h2 {
+            color: #111;
+        }
+        .lang-switch {
+            text-align: right;
+            margin-bottom: 20px;
+        }
+        .lang-switch button {
+            padding: 6px 12px;
+            border: 1px solid #aaa;
+            background: #fff;
+            cursor: pointer;
+            border-radius: 6px;
+            margin-left: 10px;
+        }
+        .section {
+            display: none;
+        }
+        .section.active {
+            display: block;
+        }
+        footer {
+            margin-top: 40px;
+            font-size: 14px;
+            text-align: center;
+            color: #777;
         }
     </style>
 </head>
+
 <body>
 
-<h1>Developer Website – Muslim App</h1>
-<p><strong>Last updated:</strong> 2025-12-05</p>
+<div class="container">
 
-<p>Muslim App is developed by <strong>EL MARINI NETWORK</strong>, a studio dedicated to creating modern, spiritual, and beneficial mobile applications.</p>
+    <div class="lang-switch">
+        <button onclick="switchLang('fr')">🇫🇷 Français</button>
+        <button onclick="switchLang('en')">🇬🇧 English</button>
+    </div>
 
-<p>For development inquiries, partnerships, collaborations, or media requests:</p>
+    <!-- ---------------------- FRENCH VERSION ---------------------- -->
+    <div id="fr" class="section active">
 
-<p><strong>Contact:</strong> 
-<a href="mailto:support@elmariniapp.com">support@elmariniapp.com</a>
-</p>
+        <h1>Site Développeur – EL MARINI APP</h1>
+        <p><strong>Développeur :</strong> EL MARINI APP — Muslim App Developer</p>
+        <p><strong>Dernière mise à jour :</strong> 2025</p>
 
-<p>Our mission is to deliver high-quality Islamic applications that elevate daily spiritual practice.</p>
+        <h2>Notre Mission</h2>
+        <p>
+            EL MARINI APP développe des applications modernes, utiles et accessibles
+            pour la communauté musulmane. Muslim App est conçue pour offrir une
+            expérience fluide, élégante et totalement respectueuse de la vie privée.
+        </p>
+
+        <h2>Nos Engagements</h2>
+        <ul>
+            <li>Aucune collecte de données personnelles</li>
+            <li>Aucun tracking, aucune publicité</li>
+            <li>Transparence totale pour les utilisateurs</li>
+            <li>Respect strict des règles Google Play et du RGPD</li>
+        </ul>
+
+        <h2>Support Technique</h2>
+        <p>Pour toute question, contactez-nous :</p>
+        <p><strong>Email :</strong> <a href="mailto:support@elmariniapp.com">support@elmariniapp.com</a></p>
+
+        <h2>Autres Pages Officielles</h2>
+        <ul>
+            <li><a href="https://elmariniapp.github.io/muslim-app-policy/">Politique de Confidentialité</a></li>
+            <li><a href="https://elmariniapp.github.io/muslim-app-support/">Page Support</a></li>
+            <li><a href="https://elmariniapp.github.io/muslim-app-about/">À propos</a></li>
+        </ul>
+
+    </div>
+
+
+    <!-- ---------------------- ENGLISH VERSION ---------------------- -->
+    <div id="en" class="section">
+
+        <h1>Developer Website – EL MARINI APP</h1>
+        <p><strong>Developer:</strong> EL MARINI APP — Muslim App Developer</p>
+        <p><strong>Last updated:</strong> 2025</p>
+
+        <h2>Our Mission</h2>
+        <p>
+            EL MARINI APP builds modern, useful and accessible applications
+            for the Muslim community. Muslim App is designed to deliver a smooth,
+            elegant and privacy-friendly experience.
+        </p>
+
+        <h2>Our Commitments</h2>
+        <ul>
+            <li>No personal data collection</li>
+            <li>No tracking, no advertising</li>
+            <li>Total transparency for all users</li>
+            <li>Strict compliance with Google Play and GDPR</li>
+        </ul>
+
+        <h2>Technical Support</h2>
+        <p>For any questions, please contact us:</p>
+        <p><strong>Email:</strong> <a href="mailto:support@elmariniapp.com">support@elmariniapp.com</a></p>
+
+        <h2>Other Official Pages</h2>
+        <ul>
+            <li><a href="https://elmariniapp.github.io/muslim-app-policy/">Privacy Policy</a></li>
+            <li><a href="https://elmariniapp.github.io/muslim-app-support/">Support Page</a></li>
+            <li><a href="https://elmariniapp.github.io/muslim-app-about/">About Page</a></li>
+        </ul>
+
+    </div>
+
+</div>
+
+<footer>
+    © 2025 EL MARINI APP — Muslim App Developer
+</footer>
+
+<script>
+function switchLang(lang) {
+    document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
+    document.getElementById(lang).classList.add('active');
+}
+</script>
 
 </body>
 </html>
