@@ -4,48 +4,217 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Developer Website – EL MARINI APP</title>
+    <meta name="description" content="EL MARINI APP develops modern, useful, and privacy-conscious mobile applications, including Muslim App. Official developer page.">
     <style>
+        :root {
+            --bg: #f5f7fa;
+            --card: #ffffff;
+            --text: #1a2230;
+            --muted: #5f6b7a;
+            --line: #e6e9ee;
+            --primary: #0f766e;
+            --primary-soft: #e8f5f2;
+            --shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
         body {
             font-family: Arial, sans-serif;
             margin: 0;
-            padding: 40px;
-            background: #f4f4f4;
-            color: #333;
+            padding: 32px 16px;
+            background: linear-gradient(180deg, #f8fafc 0%, #f3f4f6 100%);
+            color: var(--text);
+            line-height: 1.7;
         }
+
         .container {
-            max-width: 900px;
+            max-width: 980px;
             margin: auto;
-            background: #fff;
-            padding: 40px;
-            border-radius: 12px;
-            border: 1px solid #ddd;
+            background: var(--card);
+            padding: 40px 32px;
+            border-radius: 18px;
+            border: 1px solid var(--line);
+            box-shadow: var(--shadow);
         }
-        h1, h2 {
-            color: #111;
+
+        .topbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-bottom: 28px;
         }
+
+        .brand {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+        }
+
+        .brand-title {
+            margin: 0;
+            font-size: 28px;
+            font-weight: 700;
+            color: #111827;
+        }
+
+        .brand-subtitle {
+            margin: 0;
+            color: var(--muted);
+            font-size: 15px;
+        }
+
         .lang-switch {
-            text-align: right;
-            margin-bottom: 20px;
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
         }
+
         .lang-switch button {
-            padding: 6px 12px;
-            border: 1px solid #aaa;
+            padding: 9px 14px;
+            border: 1px solid var(--line);
             background: #fff;
             cursor: pointer;
-            border-radius: 6px;
-            margin-left: 10px;
+            border-radius: 10px;
+            font-weight: 600;
+            transition: all 0.2s ease;
         }
+
+        .lang-switch button:hover {
+            background: #f8fafc;
+        }
+
         .section {
             display: none;
         }
+
         .section.active {
             display: block;
         }
+
+        .hero {
+            background: linear-gradient(135deg, #f8fffe 0%, #eef8f6 100%);
+            border: 1px solid #dcefeb;
+            border-radius: 16px;
+            padding: 24px;
+            margin-bottom: 28px;
+        }
+
+        .badge {
+            display: inline-block;
+            background: var(--primary-soft);
+            color: var(--primary);
+            border: 1px solid #cde9e3;
+            border-radius: 999px;
+            padding: 6px 12px;
+            font-size: 13px;
+            font-weight: 700;
+            margin-bottom: 14px;
+        }
+
+        h1 {
+            margin: 0 0 12px 0;
+            font-size: 32px;
+            line-height: 1.2;
+            color: #0f172a;
+        }
+
+        h2 {
+            color: #111827;
+            border-bottom: 2px solid #eef2f7;
+            padding-bottom: 10px;
+            margin-top: 34px;
+            margin-bottom: 12px;
+            font-size: 22px;
+        }
+
+        p {
+            margin: 0 0 14px 0;
+        }
+
+        .lead {
+            font-size: 17px;
+            color: #334155;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+            gap: 14px;
+            margin: 18px 0 8px;
+        }
+
+        .info-card {
+            background: #fcfcfd;
+            border: 1px solid var(--line);
+            border-radius: 14px;
+            padding: 16px;
+        }
+
+        .info-card strong {
+            display: block;
+            margin-bottom: 6px;
+            color: #0f172a;
+        }
+
+        .highlight {
+            background: #fafaf8;
+            border-left: 4px solid var(--primary);
+            padding: 16px 18px;
+            border-radius: 10px;
+            margin: 18px 0;
+            color: #334155;
+        }
+
+        ul {
+            padding-left: 22px;
+            margin-top: 10px;
+        }
+
+        li {
+            margin-bottom: 8px;
+        }
+
+        a {
+            color: #0b65c2;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .divider {
+            height: 1px;
+            background: var(--line);
+            margin: 32px 0;
+        }
+
         footer {
-            margin-top: 40px;
+            max-width: 980px;
+            margin: 18px auto 0;
             font-size: 14px;
             text-align: center;
             color: #777;
+            padding-bottom: 12px;
+        }
+
+        @media (max-width: 640px) {
+            .container {
+                padding: 24px 18px;
+            }
+
+            h1 {
+                font-size: 26px;
+            }
+
+            .brand-title {
+                font-size: 24px;
+            }
         }
     </style>
 </head>
@@ -54,92 +223,225 @@
 
 <div class="container">
 
-    <div class="lang-switch">
-        <button onclick="switchLang('fr')">🇫🇷 Français</button>
-        <button onclick="switchLang('en')">🇬🇧 English</button>
+    <div class="topbar">
+        <div class="brand">
+            <p class="brand-title">EL MARINI APP</p>
+            <p class="brand-subtitle">Official developer page • Mobile applications with a focus on usefulness, clarity and user respect</p>
+        </div>
+
+        <div class="lang-switch">
+            <button onclick="switchLang('fr')">🇫🇷 Français</button>
+            <button onclick="switchLang('en')">🇬🇧 English</button>
+        </div>
     </div>
 
-    <!-- ---------------------- FRENCH VERSION ---------------------- -->
     <div id="fr" class="section active">
 
-        <h1>Site Développeur – EL MARINI APP</h1>
-        <p><strong>Développeur :</strong> EL MARINI APP — Muslim App Developer</p>
-        <p><strong>Dernière mise à jour :</strong> 2025</p>
+        <div class="hero">
+            <div class="badge">Page développeur officielle</div>
+            <h1>Site Développeur – EL MARINI APP</h1>
+            <p class="lead">
+                EL MARINI APP développe des applications mobiles modernes, utiles et accessibles,
+                avec une attention particulière portée à la simplicité, à l’expérience utilisateur
+                et au respect de la confidentialité.
+            </p>
+        </div>
 
-        <h2>Notre Mission</h2>
+        <div class="info-grid">
+            <div class="info-card">
+                <strong>Développeur</strong>
+                EL MARINI APP
+            </div>
+            <div class="info-card">
+                <strong>Spécialité</strong>
+                Applications mobiles utiles, modernes et orientées utilisateur
+            </div>
+            <div class="info-card">
+                <strong>Projet principal</strong>
+                Muslim App
+            </div>
+            <div class="info-card">
+                <strong>Contact</strong>
+                support@elmariniapp.com
+            </div>
+        </div>
+
+        <h2>Notre mission</h2>
         <p>
-            EL MARINI APP développe des applications modernes, utiles et accessibles
-            pour la communauté musulmane. Muslim App est conçue pour offrir une
-            expérience fluide, élégante et totalement respectueuse de la vie privée.
+            Notre mission est de concevoir des applications mobiles sérieuses, lisibles et utiles,
+            pensées pour répondre à des besoins concrets du quotidien.
+        </p>
+        <p>
+            Avec Muslim App, nous cherchons à proposer une expérience moderne, propre et cohérente,
+            au service d’un usage simple, pratique et respectueux.
         </p>
 
-        <h2>Nos Engagements</h2>
+        <h2>Notre approche produit</h2>
+        <p>
+            Nous privilégions une philosophie de développement centrée sur l’utilisateur :
+            une interface claire, des fonctionnalités utiles, une progression continue du produit
+            et une attention réelle à la qualité perçue.
+        </p>
         <ul>
-            <li>Aucune collecte de données personnelles</li>
-            <li>Aucun tracking, aucune publicité</li>
-            <li>Transparence totale pour les utilisateurs</li>
-            <li>Respect strict des règles Google Play et du RGPD</li>
+            <li>Des outils pensés pour être réellement utiles au quotidien</li>
+            <li>Une interface simple, moderne et agréable à utiliser</li>
+            <li>Une volonté de cohérence, de lisibilité et de stabilité</li>
+            <li>Une approche respectueuse des utilisateurs et de leurs attentes</li>
         </ul>
 
-        <h2>Support Technique</h2>
-        <p>Pour toute question, contactez-nous :</p>
+        <div class="highlight">
+            Nous considérons qu’une bonne application ne se limite pas à une liste de fonctionnalités :
+            elle doit aussi inspirer confiance, être claire dans son fonctionnement et agréable à utiliser sur la durée.
+        </div>
+
+        <h2>Nos engagements</h2>
+        <ul>
+            <li>Concevoir des applications avec une logique d’utilité réelle</li>
+            <li>Favoriser des expériences simples, lisibles et sans complexité inutile</li>
+            <li>Adopter une approche attentive à la confidentialité et à la sobriété des données</li>
+            <li>Maintenir une communication claire à travers nos pages officielles</li>
+            <li>Faire évoluer nos produits avec sérieux et cohérence</li>
+        </ul>
+
+        <h2>Confidentialité et respect de l’utilisateur</h2>
+        <p>
+            Nous accordons une importance particulière au respect de la vie privée.
+            Lorsque cela est possible, nous privilégions des approches simples,
+            locales et non intrusives, en évitant toute collecte excessive ou inutile.
+        </p>
+        <p>
+            Les informations demandées par une fonctionnalité sont utilisées dans le seul but
+            de fournir le service attendu par l’utilisateur.
+        </p>
+
+        <h2>Support technique</h2>
+        <p>Pour toute question, demande d’assistance ou retour utilisateur, vous pouvez nous contacter à l’adresse suivante :</p>
         <p><strong>Email :</strong> <a href="mailto:support@elmariniapp.com">support@elmariniapp.com</a></p>
 
-        <h2>Autres Pages Officielles</h2>
+        <h2>Pages officielles</h2>
         <ul>
-            <li><a href="https://elmariniapp.github.io/muslim-app-policy/">Politique de Confidentialité</a></li>
+            <li><a href="https://elmariniapp.github.io/muslim-app-policy/">Politique de confidentialité</a></li>
             <li><a href="https://elmariniapp.github.io/muslim-app-support/">Page Support</a></li>
-            <li><a href="https://elmariniapp.github.io/muslim-app-about/">À propos</a></li>
+            <li><a href="https://elmariniapp.github.io/muslim-app-about/">À propos de Muslim App</a></li>
         </ul>
 
+        <div class="divider"></div>
+
+        <p>
+            <strong>EL MARINI APP</strong> s’inscrit dans une démarche de développement sérieuse,
+            avec la volonté de construire des applications utiles, crédibles et durables.
+        </p>
     </div>
 
-
-    <!-- ---------------------- ENGLISH VERSION ---------------------- -->
     <div id="en" class="section">
 
-        <h1>Developer Website – EL MARINI APP</h1>
-        <p><strong>Developer:</strong> EL MARINI APP — Muslim App Developer</p>
-        <p><strong>Last updated:</strong> 2025</p>
+        <div class="hero">
+            <div class="badge">Official developer page</div>
+            <h1>Developer Website – EL MARINI APP</h1>
+            <p class="lead">
+                EL MARINI APP develops modern, useful, and accessible mobile applications,
+                with a strong focus on simplicity, user experience, and privacy-conscious design.
+            </p>
+        </div>
 
-        <h2>Our Mission</h2>
+        <div class="info-grid">
+            <div class="info-card">
+                <strong>Developer</strong>
+                EL MARINI APP
+            </div>
+            <div class="info-card">
+                <strong>Focus</strong>
+                Useful, modern, and user-oriented mobile applications
+            </div>
+            <div class="info-card">
+                <strong>Main project</strong>
+                Muslim App
+            </div>
+            <div class="info-card">
+                <strong>Contact</strong>
+                support@elmariniapp.com
+            </div>
+        </div>
+
+        <h2>Our mission</h2>
         <p>
-            EL MARINI APP builds modern, useful and accessible applications
-            for the Muslim community. Muslim App is designed to deliver a smooth,
-            elegant and privacy-friendly experience.
+            Our mission is to build serious, readable, and useful mobile applications
+            designed to answer real everyday needs.
+        </p>
+        <p>
+            With Muslim App, we aim to provide a modern, clean, and coherent experience
+            built around practical value, simplicity, and user respect.
         </p>
 
-        <h2>Our Commitments</h2>
+        <h2>Our product approach</h2>
+        <p>
+            We favor a product philosophy centered on the user:
+            clear interfaces, useful features, continuous improvement,
+            and careful attention to perceived quality.
+        </p>
         <ul>
-            <li>No personal data collection</li>
-            <li>No tracking, no advertising</li>
-            <li>Total transparency for all users</li>
-            <li>Strict compliance with Google Play and GDPR</li>
+            <li>Tools designed to be genuinely useful in daily life</li>
+            <li>A simple, modern, and pleasant user experience</li>
+            <li>A strong focus on coherence, readability, and stability</li>
+            <li>A respectful approach to users and their expectations</li>
         </ul>
 
-        <h2>Technical Support</h2>
-        <p>For any questions, please contact us:</p>
+        <div class="highlight">
+            We believe a good application is not just a collection of features:
+            it should also feel trustworthy, clear in its purpose,
+            and comfortable to use over time.
+        </div>
+
+        <h2>Our commitments</h2>
+        <ul>
+            <li>Build applications with real practical value</li>
+            <li>Favor simple, readable experiences without unnecessary complexity</li>
+            <li>Adopt a privacy-conscious and data-minimal approach whenever possible</li>
+            <li>Maintain clear communication through our official pages</li>
+            <li>Improve our products with seriousness and consistency</li>
+        </ul>
+
+        <h2>Privacy and user respect</h2>
+        <p>
+            We place strong importance on user privacy.
+            Whenever possible, we favor simple, local, and non-intrusive approaches,
+            while avoiding excessive or unnecessary data collection.
+        </p>
+        <p>
+            Any information required by a feature is used only for the purpose
+            of delivering the expected service to the user.
+        </p>
+
+        <h2>Technical support</h2>
+        <p>For any question, support request, or user feedback, you can contact us at:</p>
         <p><strong>Email:</strong> <a href="mailto:support@elmariniapp.com">support@elmariniapp.com</a></p>
 
-        <h2>Other Official Pages</h2>
+        <h2>Official pages</h2>
         <ul>
             <li><a href="https://elmariniapp.github.io/muslim-app-policy/">Privacy Policy</a></li>
             <li><a href="https://elmariniapp.github.io/muslim-app-support/">Support Page</a></li>
-            <li><a href="https://elmariniapp.github.io/muslim-app-about/">About Page</a></li>
+            <li><a href="https://elmariniapp.github.io/muslim-app-about/">About Muslim App</a></li>
         </ul>
 
+        <div class="divider"></div>
+
+        <p>
+            <strong>EL MARINI APP</strong> follows a serious development approach
+            with the goal of building useful, credible, and durable mobile applications.
+        </p>
     </div>
 
 </div>
 
 <footer>
-    © 2025 EL MARINI APP — Muslim App Developer
+    © 2025 EL MARINI APP — Official Developer Website
 </footer>
 
 <script>
 function switchLang(lang) {
     document.querySelectorAll('.section').forEach(sec => sec.classList.remove('active'));
     document.getElementById(lang).classList.add('active');
+    document.documentElement.lang = lang;
 }
 </script>
 
